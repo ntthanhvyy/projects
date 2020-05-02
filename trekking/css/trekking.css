@@ -1,0 +1,864 @@
+/*! HTML5 Boilerplate v7.3.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+/*font-family: 'Titillium Web', sans-serif;*/
+
+html {
+  color: #222;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  margin: 0 auto;
+  font: 1.6rem/1.5 'Titillium Web', sans-serif;
+}
+
+/*header, main, footer {
+}*/
+
+a, a:hover, a:visited {
+  text-decoration: none;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+h1 {
+  display: none;
+}
+
+header {
+  /*height: 100vh;*/
+  background: url(../img/banner.png) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.flex {
+  display: flex;
+}
+
+header .page-menu {
+  font-weight: 600;
+  color: #fff;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header > .page-menu {
+  padding: 4% 2% 1% 2%;
+}
+
+header .page-menu-right {
+  width: 30%;
+  justify-content: space-around;
+}
+
+header .page-menu-right ul {
+  width: auto;
+  justify-content: space-around;
+}
+
+header .page-menu-right a:link, 
+header .page-menu-right a:visited {
+  color: #fff;
+}
+
+header .page-menu-right a:hover, 
+header .page-menu-right a:active, 
+header .page-menu-right .active {
+  border-top: solid 1px #fff;
+  border-bottom: solid 1px #fff;
+}
+
+header .page-menu-left a:hover > img, 
+header .page-menu-left a:active > img {
+  transition: transform 0.2s;
+  transform: scale(1.25);
+}
+
+header nav {
+  background-color: #82785c;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+header nav ul {
+  padding: 0 2%;
+  justify-content: space-around;
+}
+
+header .dropdown > a {
+  text-decoration: none;
+  color: #fff
+}
+
+header nav ul li, 
+header .dropdown{
+  padding: 1% 0.25rem;
+}
+
+header nav ul li:hover, 
+header nav ul li:active,
+header .dropdown:hover,
+header .dropdown:active{
+  background-color: #fff;
+  color: #82785c;
+  cursor: pointer;
+  text-decoration: underline #e0ddd6; 
+}
+
+header .dropdown:hover a,
+header .dropdown:active a {
+  color: #82785c;
+}
+
+header .banner {
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  padding: 15% 20% 20% 20%;
+}
+
+header .banner h2 {
+  width: 60%;
+  margin: 0 auto;
+  font-weight: 800;
+  font-size: 3.6rem;
+}
+
+header .banner p {
+  width: 45%;
+  margin: 0 auto;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+header .dropdown-content-container{
+  display: none;
+  position: absolute;
+  top: 21.5%;
+  left: 0%;
+  background-color: #fff;
+  color: #254a7e;
+  width: 100%;
+  z-index: 1;
+}
+
+header .dropdown:hover .dropdown-content-container{
+  display: block;
+}
+
+header .mega-menu-content{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+header .columns {
+  width: 25%;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+header .columns a:link,
+header .columns a:visited{
+  color: #254a7e;
+  padding: 1rem;
+  display: block;
+  text-transform: none;
+  font-weight: 700;
+}
+
+header .columns a:hover,
+header .columns a:active{
+  color: #fff;
+  background-color: #254a7e;
+}
+
+main {
+  background-color: #fff;
+  /*height: 100vh; CHANGE-THIS*/
+}
+
+main nav{
+  padding: 2%;
+  background-color: #f5f6f7;
+  text-transform: uppercase;
+  justify-content: space-between;
+  align-items: center;
+  color: #333333;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+ 
+main nav .right-container {
+  width: 70%;
+}
+
+main nav .left-container {
+  width: 30%;
+}
+
+.right-container {
+  justify-content: flex-end;
+}
+
+main .shop-option form {
+  width: 100%;
+  justify-content: space-around;
+}
+
+main nav input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+main button[name="see-all-prodts"] {
+  display: inline-block;
+  background-color: #82785c;
+  color: #fff;
+  padding: 2%;
+  text-transform: uppercase;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+}
+
+main button[name="see-all-prodts"]:hover {
+  background-color: #fff;
+  color: #82785c;
+  border: 2px solid #82785c;
+  cursor: pointer;
+}
+
+main .menu-line {
+  display: flex;
+  align-items: center;
+  padding: 4% 4% 0% 4%;
+}
+
+main .menu-line h3 {
+  color: #82785c;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+main .men h3 {
+  margin-right: 2%;
+}
+
+main .women h3 {
+  margin-left: 2%;
+}
+
+main .menu-line hr {
+  width: 100%;
+  border-top: 2px solid #82785c;
+}
+
+main .page-num {
+  color: #82785c;
+  font-weight: 800;
+  font-size: 1.25rem;
+  padding: 0 4%;
+}
+
+main .page-num:hover { /*fake button*/
+  cursor: pointer;
+}
+
+
+main .page-num:first-child{
+  text-align: left;
+}
+
+main .page-num:last-child{
+  text-align: right;
+}
+
+main .shop-item {
+  padding: 0 4%;
+  display: flex;
+  justify-content: space-around;
+}
+
+main .shop-item .item {
+  width: 30%;
+  padding: 2%;
+  background-color: #f5f6f7;
+}
+
+main .shop-item .item img {
+  margin: 15% auto;
+}
+
+main .item-img {
+  text-align: center;
+}
+
+main .item-detail {
+  display: flex;
+  justify-content: space-between;
+  color: #82785c;
+  font-weight: 800;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+
+main .item:hover {
+  cursor: pointer;
+  border: 5px solid #aa9b77;
+}
+
+main .item-detail .price {
+  color: #424242;
+}
+
+main .tshirt-man span, 
+main .tshirt-woman span{
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+main .tshirt-man span:first-child{
+  background-color: #165eb9;
+}
+
+main .tshirt-man span:nth-child(2){
+  background-color: #ffe637;
+}
+
+main .tshirt-man span:last-child{
+  background-color: #535253;
+}
+
+main .tshirt-woman span:first-child{
+  background-color: #d3a7ac;
+}
+
+main .tshirt-woman span:last-child{
+  background-color: #fff;
+}
+
+main .size-hover {
+  cursor: pointer;
+}
+
+main .about-us {
+  margin-top: 4%;
+  padding: 4% 0;
+  background-color: #82785c;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+main .about-us p {
+  width: 50%;
+  padding: 4% 8%;
+  margin: 0 auto;
+  font-weight: 500;
+  font-size: 1.25rem;
+  text-align: center;
+  border: 2px solid #fff;
+}
+
+main .about-us h3 {
+  padding: 2%;
+  background-color: #82785c;
+  margin: -1.5rem;
+  margin-top: -2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  position: absolute;
+  top: 15%;
+  left: 45%;
+}
+
+footer {
+  background-color: #534741;
+  padding: 4%;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+footer .left-container, 
+footer .right-container {
+  width: 30%;
+}
+
+footer .left-container {
+  text-transform: uppercase;
+  text-align: left;
+}
+
+footer .left-container h3 {
+  margin-bottom: 1.25%;
+  font-weight: 800;
+}
+
+footer .left-container p {
+  font-size: 1rem;
+}
+
+footer .right-container {
+  text-align: right;
+  font-size: 1.25rem;
+}
+
+footer .right-container h4 {
+  text-transform: uppercase;
+}
+
+footer .right-container span {
+  color: #aa9b77;
+  font-weight: 600;
+}
+
+main .cart-info-container {
+  padding: 2% 4%;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 2;
+}
+
+.code-82785c {
+  color: #82785c;
+}
+
+.code-444444 {
+  color: #444;
+}
+
+.code-b4b4b4 {
+  color: #b4b4b4;
+}
+
+main .breakline {
+  color: #ddd;
+  padding: 2% 0;
+}
+
+main .login-coupon, main .address {
+  display: flex;
+  justify-content: space-between;
+}
+
+main .login-coupon input {
+  border: 2px solid #dddad3;
+  border-radius: 2px;
+}
+
+.crt-left-container, 
+.crt-right-container {
+  width: 45%;
+}
+
+.login-coupon h6 {
+  padding: 0.5rem 1.5rem;
+  background-color: #dddad3;
+}
+
+.login-coupon h6, .login-coupon p {
+  margin-bottom: 2%;
+}
+
+.login-coupon label {
+  display: block;
+}
+
+.login-coupon .crt-left-container input {
+  width: 80%;
+}
+
+.login-coupon .crt-right-container input {
+  width: 100%;
+  margin-bottom: 4%;
+}
+
+.login-coupon button {
+  width: 18%;
+  padding: 2%;
+  font-weight: 700;
+  font-size: 1.25rem;
+  background-color: #82785c;
+  color: #fff;
+  border: none;
+  border-radius: 5%;
+  text-transform: uppercase;
+}
+
+.login-coupon button:hover { background-color: #fff;
+  color: #82785c;
+  border: 2px solid #82785c;
+  cursor: pointer;
+}
+
+.login-coupon .crt-right-container button {
+  margin-left: 82%;
+}
+
+.address .inline label, .address .full-line label {
+  display: inline-block;
+}
+
+.address .inline {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.address .inline div {
+  width: 50%;
+}
+
+.address .inline input {
+  width: 80%;
+}
+
+.address .full-line input, .address .full-line label {
+  width: 90%;
+}
+
+.sum .title, .sum .detail {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sum .title {
+  font-size: 1.5rem;
+  margin-bottom: 2%;
+}
+
+.sum .detail {
+  border-bottom: 1px solid #82785c;
+}
+
+.sum button[name="edit-cart"] {
+  width: 18%;
+  padding: 2%;
+  font-weight: 700;
+  font-size: 1.25rem;
+  background-color: #82785c;
+  color: #fff;
+  border: none;
+  text-transform: uppercase;
+}
+
+.sum button[name="edit-cart"]:hover { 
+  background-color: #fff;
+  color: #82785c;
+  border: 2px solid #82785c;
+  cursor: pointer;
+}
+
+.sum > p {
+  text-align: right;
+  color: #6fc6ad;
+  text-transform: uppercase;
+  margin-bottom: 4%;
+}
+
+.sum form {
+  width: 100%;
+}
+
+.sum form div{
+  border: 1px solid #82785c;
+  border-bottom: none;
+  padding: 2% 4%;
+}
+
+.sum form div p {
+  margin-left: 1rem;
+}
+
+.sum form div:last-child {
+  border-bottom: 1px solid #82785c;
+  margin-bottom: 2%;
+}
+
+.sum button[name="checkout"] {
+  padding: 2%;
+  display: block;
+  font-weight: 700;
+  font-size: 1.25rem;
+  background-color: #3bb18f;
+  color: #fff;
+  border: none;
+  margin-bottom: 4%;
+}
+
+.sum button[name="checkout"]:hover { 
+  background-color: #fff;
+  color: #3bb18f;
+  border: 2px solid #3bb18f;
+  cursor: pointer;
+}
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+  display: none !important;
+}
+
+/*
+* Hide only visually, but have it available for screen readers:
+* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+*
+* 1. For long content, line feeds are not interpreted as spaces and small width
+*    causes content to wrap 1 word per line:
+*    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+*/
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+* Extends the .sr-only class to allow the element
+* to be focusable when navigated to via the keyboard:
+* https://www.drupal.org/node/897638
+*/
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+* Hide visually and from screen readers, but maintain layout
+*/
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+* Clearfix: contain floats
+*
+* For modern browsers
+* 1. The space content is one way to avoid an Opera bug when the
+*    `contenteditable` attribute is included anywhere else in the document.
+*    Otherwise it causes space to appear at the top and bottom of elements
+*    that receive the `clearfix` class.
+* 2. The use of `table` rather than `block` is only necessary if using
+*    `:before` to contain the top-margins of child elements.
+*/
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  pre {
+    white-space: pre-wrap !important;
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  /*
+     * Printing Tables:
+     * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
